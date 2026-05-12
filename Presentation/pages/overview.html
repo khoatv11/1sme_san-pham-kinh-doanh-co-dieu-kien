@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng Quan Luồng Đại Lý</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .flow-container {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .flow-phase {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px dashed var(--card-border);
+            position: relative;
+        }
+
+        .flow-phase h3 {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--card-bg);
+            padding: 0 10px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border-radius: 4px;
+        }
+
+        .flow-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-box {
+            background: var(--card-bg);
+            border: 1px solid var(--primary);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 180px;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flow-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            background: rgba(59, 130, 246, 0.2);
+        }
+
+        .step-id {
+            background: var(--primary);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .arrow-down {
+            width: 2px;
+            height: 30px;
+            background: var(--card-border);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .arrow-down::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -4px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid var(--card-border);
+        }
+
+        .overview-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .start-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .start-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header style="padding-bottom: 1rem;">
+        <h1>Sơ Đồ Tổng Quan</h1>
+        <p class="subtitle">Các bước được thực hiện tuần tự và song song trong toàn bộ luồng.</p>
+    </header>
+
+    <div class="main-content" style="max-width: 1000px; flex-direction: column;">
+        <div class="card" style="padding: 1rem 2rem;">
+            <div class="flow-container">
+                <div style="display: flex; gap: 2rem; width: 100%; flex-wrap: wrap;">
+                    <!-- Phase 1: Chuẩn bị -->
+                    <div class="flow-phase" style="flex: 2; min-width: 300px;">
+                        <h3>1.1. Khai báo sản phẩm</h3>
+                        <div class="flow-row">
+                            <a href="step-1.html" class="flow-box">
+                                <div class="step-id">1</div>Khai báo SP & Giá
+                            </a>
+                            <div style="display: flex; align-items: center; color: var(--card-border);">➔</div>
+                            <a href="step-2.html" class="flow-box">
+                                <div class="step-id">2</div>Hiển thị chợ SP
+                            </a>
+                        </div>
+                        <div class="arrow-down" style="margin-top: 1rem;"></div>
+                        <div class="flow-row" style="margin-top: 1rem;">
+                            <a href="step-4.html" class="flow-box" style="border-color: var(--secondary);">
+                                <div class="step-id" style="background: var(--secondary);">4</div>Quản lý Tồn
+                                kho<br><small style="color:var(--text-muted)">(Độc lập/Song song)</small>
+                            </a>
+                            <a href="step-5.html" class="flow-box" style="border-color: var(--secondary);">
+                                <div class="step-id" style="background: var(--secondary);">5</div>Affiliate<br><small
+                                    style="color:var(--text-muted)">(Độc lập/Song song)</small>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Phase Xác thực -->
+                    <div class="flow-phase"
+                        style="flex: 1; min-width: 200px; display: flex; align-items: center; justify-content: center;">
+                        <h3>1.2 Xác thực TT Doanh nghiệp</h3>
+                        <div class="flow-row" style="width: 100%;">
+                            <a href="step-3.html" class="flow-box" style="width: 100%;">
+                                <div class="step-id">3</div>Xác thực TT<br><small style="color:var(--text-muted)">(Thực
+                                    hiện song song)</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arrow-down"></div>
+
+                <!-- Phase 2: Mua hàng -->
+                <div class="flow-phase">
+                    <h3>2. Mua Hàng & Thanh Toán</h3>
+                    <div class="flow-row">
+                        <a href="step-6.html" class="flow-box">
+                            <div class="step-id">6</div>Giỏ hàng & Checkout
+                        </a>
+                        <div style="display: flex; align-items: center; color: var(--card-border);">➔</div>
+                        <a href="step-7.html" class="flow-box">
+                            <div class="step-id">7</div>Thanh toán
+                        </a>
+                    </div>
+                </div>
+
+                <div class="arrow-down"></div>
+
+                <!-- Phase 3: Sau bán -->
+                <div class="flow-phase">
+                    <h3>3. Hoàn Thiện Sau Bán</h3>
+                    <div class="flow-row">
+                        <a href="step-8.html" class="flow-box">
+                            <div class="step-id">8</div>Xuất hóa đơn
+                        </a>
+                        <a href="step-9.html" class="flow-box">
+                            <div class="step-id">9</div>Ký hợp đồng
+                        </a>
+                        <a href="step-10.html" class="flow-box">
+                            <div class="step-id">10</div>Theo dõi đơn hàng
+                        </a>
+                        <a href="step-11.html" class="flow-box">
+                            <div class="step-id">11</div>Hoàn hủy đơn hàng
+                        </a>
+                    </div>
+                </div>
+
+                <div class="arrow-down"></div>
+
+                <!-- Phase 4: Vận hành & Hỗ trợ -->
+                <div class="flow-phase">
+                    <h3>4. Vận Hành & Hỗ Trợ</h3>
+                    <div class="flow-row">
+                        <a href="step-12.html" class="flow-box" style="border-color: var(--accent);">
+                            <div class="step-id" style="background: var(--accent);">12</div>Quản lý dịch vụ
+                        </a>
+                        <a href="step-13.html" class="flow-box" style="border-color: var(--accent);">
+                            <div class="step-id" style="background: var(--accent);">13</div>Ticket Hỗ trợ
+                        </a>
+                        <a href="step-14.html" class="flow-box" style="border-color: var(--accent);">
+                            <div class="step-id" style="background: var(--accent);">14</div>Báo cáo & Đối soát
+                        </a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; width: 100%;">
+                    <a href="step-1.html" class="start-btn">Vào Trình Bày Chi Tiết &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
